@@ -30,10 +30,6 @@ class GitAnnex < Formula
     bin.install_symlink "git-annex" => "git-annex-shell"
   end
 
-  service do
-    run [opt_bin/"git-annex", "assistant", "--autostart"]
-  end
-
   test do
     # make sure git can find git-annex
     ENV.prepend_path "PATH", bin
